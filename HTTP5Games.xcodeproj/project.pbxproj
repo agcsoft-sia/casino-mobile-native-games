@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		950EC7C029D2CD2A0072E2DF /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EC7BF29D2CD2A0072E2DF /* GameSession.swift */; };
+		950EC7C229D2F1920072E2DF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 950EC7C129D2F1920072E2DF /* README.md */; };
+		950EC7C429D2F5CC0072E2DF /* build_habanero.js in Resources */ = {isa = PBXBuildFile; fileRef = 950EC7C329D2F5CC0072E2DF /* build_habanero.js */; };
+		9578D0CB29D2AF4E00810FA5 /* HBShared.zip in Resources */ = {isa = PBXBuildFile; fileRef = 9578D0CA29D2AF4E00810FA5 /* HBShared.zip */; settings = {ASSET_TAGS = (habanero, ); }; };
+		9578D0CD29D2B0B100810FA5 /* SGRainbowmania.zip in Resources */ = {isa = PBXBuildFile; fileRef = 9578D0CC29D2B0B100810FA5 /* SGRainbowmania.zip */; settings = {ASSET_TAGS = ("habanero:SGRainbowmania", ); }; };
+		9578D0CF29D2B58B00810FA5 /* SGDragonTigerGate.zip in Resources */ = {isa = PBXBuildFile; fileRef = 9578D0CE29D2B58B00810FA5 /* SGDragonTigerGate.zip */; settings = {ASSET_TAGS = ("habanero:SGDragonTigerGate", ); }; };
+		9578D0D229D2CB6E00810FA5 /* GCDWebServers in Frameworks */ = {isa = PBXBuildFile; productRef = 9578D0D129D2CB6E00810FA5 /* GCDWebServers */; };
+		95AEEF0D29D1C913004D93F1 /* HTTP5GamesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AEEF0C29D1C913004D93F1 /* HTTP5GamesApp.swift */; };
+		95AEEF0F29D1C913004D93F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AEEF0E29D1C913004D93F1 /* ContentView.swift */; };
+		95AEEF1129D1C914004D93F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95AEEF1029D1C914004D93F1 /* Assets.xcassets */; };
+		95AEEF1429D1C914004D93F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95AEEF1329D1C914004D93F1 /* Preview Assets.xcassets */; };
+		95AEEF1F29D1C9EF004D93F1 /* GameDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AEEF1E29D1C9EF004D93F1 /* GameDownloader.swift */; };
+		95AEEF2229D1D292004D93F1 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 95AEEF2129D1D292004D93F1 /* Zip */; };
+		95AEEF2429D1D2F4004D93F1 /* GameArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AEEF2329D1D2F4004D93F1 /* GameArchiver.swift */; };
+		95AEEF2929D1D4CA004D93F1 /* GameServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AEEF2829D1D4CA004D93F1 /* GameServer.swift */; };
+		95AEEF2B29D1D7E3004D93F1 /* WebContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AEEF2A29D1D7E3004D93F1 /* WebContentView.swift */; };
+		95AEEF2D29D1D80D004D93F1 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AEEF2C29D1D80D004D93F1 /* WebView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		950EC7BF29D2CD2A0072E2DF /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
+		950EC7C129D2F1920072E2DF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		950EC7C329D2F5CC0072E2DF /* build_habanero.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = build_habanero.js; sourceTree = "<group>"; };
+		9578D0CA29D2AF4E00810FA5 /* HBShared.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = HBShared.zip; sourceTree = "<group>"; };
+		9578D0CC29D2B0B100810FA5 /* SGRainbowmania.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = SGRainbowmania.zip; sourceTree = "<group>"; };
+		9578D0CE29D2B58B00810FA5 /* SGDragonTigerGate.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = SGDragonTigerGate.zip; sourceTree = "<group>"; };
+		95AEEF0929D1C913004D93F1 /* HTTP5Games.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTTP5Games.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		95AEEF0C29D1C913004D93F1 /* HTTP5GamesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP5GamesApp.swift; sourceTree = "<group>"; };
+		95AEEF0E29D1C913004D93F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		95AEEF1029D1C914004D93F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		95AEEF1329D1C914004D93F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		95AEEF1E29D1C9EF004D93F1 /* GameDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDownloader.swift; sourceTree = "<group>"; };
+		95AEEF2329D1D2F4004D93F1 /* GameArchiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameArchiver.swift; sourceTree = "<group>"; };
+		95AEEF2829D1D4CA004D93F1 /* GameServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameServer.swift; sourceTree = "<group>"; };
+		95AEEF2A29D1D7E3004D93F1 /* WebContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContentView.swift; sourceTree = "<group>"; };
+		95AEEF2C29D1D80D004D93F1 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		95AEEF0629D1C913004D93F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95AEEF2229D1D292004D93F1 /* Zip in Frameworks */,
+				9578D0D229D2CB6E00810FA5 /* GCDWebServers in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		950EC7BD29D2CCD80072E2DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95AEEF2A29D1D7E3004D93F1 /* WebContentView.swift */,
+				95AEEF2C29D1D80D004D93F1 /* WebView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		950EC7BE29D2CCDF0072E2DF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				95AEEF1E29D1C9EF004D93F1 /* GameDownloader.swift */,
+				95AEEF2829D1D4CA004D93F1 /* GameServer.swift */,
+				95AEEF2329D1D2F4004D93F1 /* GameArchiver.swift */,
+				950EC7BF29D2CD2A0072E2DF /* GameSession.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		95AEEF0029D1C913004D93F1 = {
+			isa = PBXGroup;
+			children = (
+				950EC7C129D2F1920072E2DF /* README.md */,
+				950EC7C329D2F5CC0072E2DF /* build_habanero.js */,
+				95AEEF1A29D1C934004D93F1 /* NativeGames */,
+				95AEEF0B29D1C913004D93F1 /* HTTP5Games */,
+				95AEEF0A29D1C913004D93F1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		95AEEF0A29D1C913004D93F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95AEEF0929D1C913004D93F1 /* HTTP5Games.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95AEEF0B29D1C913004D93F1 /* HTTP5Games */ = {
+			isa = PBXGroup;
+			children = (
+				95AEEF0C29D1C913004D93F1 /* HTTP5GamesApp.swift */,
+				95AEEF0E29D1C913004D93F1 /* ContentView.swift */,
+				950EC7BE29D2CCDF0072E2DF /* Helpers */,
+				950EC7BD29D2CCD80072E2DF /* Views */,
+				95AEEF1029D1C914004D93F1 /* Assets.xcassets */,
+				95AEEF1229D1C914004D93F1 /* Preview Content */,
+			);
+			path = HTTP5Games;
+			sourceTree = "<group>";
+		};
+		95AEEF1229D1C914004D93F1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				95AEEF1329D1C914004D93F1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		95AEEF1A29D1C934004D93F1 /* NativeGames */ = {
+			isa = PBXGroup;
+			children = (
+				95AEEF1B29D1C93E004D93F1 /* Habanero */,
+			);
+			path = NativeGames;
+			sourceTree = "<group>";
+		};
+		95AEEF1B29D1C93E004D93F1 /* Habanero */ = {
+			isa = PBXGroup;
+			children = (
+				9578D0CA29D2AF4E00810FA5 /* HBShared.zip */,
+				9578D0CC29D2B0B100810FA5 /* SGRainbowmania.zip */,
+				9578D0CE29D2B58B00810FA5 /* SGDragonTigerGate.zip */,
+			);
+			path = Habanero;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		95AEEF0829D1C913004D93F1 /* HTTP5Games */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95AEEF1729D1C914004D93F1 /* Build configuration list for PBXNativeTarget "HTTP5Games" */;
+			buildPhases = (
+				95AEEF0529D1C913004D93F1 /* Sources */,
+				95AEEF0629D1C913004D93F1 /* Frameworks */,
+				95AEEF0729D1C913004D93F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HTTP5Games;
+			packageProductDependencies = (
+				95AEEF2129D1D292004D93F1 /* Zip */,
+				9578D0D129D2CB6E00810FA5 /* GCDWebServers */,
+			);
+			productName = HTTP5Games;
+			productReference = 95AEEF0929D1C913004D93F1 /* HTTP5Games.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		95AEEF0129D1C913004D93F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					habanero,
+					"habanero:SGDragonTigerGate",
+					"habanero:SGRainbowmania",
+				);
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					95AEEF0829D1C913004D93F1 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 95AEEF0429D1C913004D93F1 /* Build configuration list for PBXProject "HTTP5Games" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 95AEEF0029D1C913004D93F1;
+			packageReferences = (
+				95AEEF2029D1D292004D93F1 /* XCRemoteSwiftPackageReference "Zip" */,
+				9578D0D029D2CB6E00810FA5 /* XCRemoteSwiftPackageReference "GCDWebServer" */,
+			);
+			productRefGroup = 95AEEF0A29D1C913004D93F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				95AEEF0829D1C913004D93F1 /* HTTP5Games */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		95AEEF0729D1C913004D93F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				950EC7C229D2F1920072E2DF /* README.md in Resources */,
+				95AEEF1429D1C914004D93F1 /* Preview Assets.xcassets in Resources */,
+				9578D0CD29D2B0B100810FA5 /* SGRainbowmania.zip in Resources */,
+				9578D0CF29D2B58B00810FA5 /* SGDragonTigerGate.zip in Resources */,
+				950EC7C429D2F5CC0072E2DF /* build_habanero.js in Resources */,
+				95AEEF1129D1C914004D93F1 /* Assets.xcassets in Resources */,
+				9578D0CB29D2AF4E00810FA5 /* HBShared.zip in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		95AEEF0529D1C913004D93F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95AEEF2929D1D4CA004D93F1 /* GameServer.swift in Sources */,
+				95AEEF2B29D1D7E3004D93F1 /* WebContentView.swift in Sources */,
+				950EC7C029D2CD2A0072E2DF /* GameSession.swift in Sources */,
+				95AEEF0F29D1C913004D93F1 /* ContentView.swift in Sources */,
+				95AEEF1F29D1C9EF004D93F1 /* GameDownloader.swift in Sources */,
+				95AEEF0D29D1C913004D93F1 /* HTTP5GamesApp.swift in Sources */,
+				95AEEF2429D1D2F4004D93F1 /* GameArchiver.swift in Sources */,
+				95AEEF2D29D1D80D004D93F1 /* WebView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		95AEEF1529D1C914004D93F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		95AEEF1629D1C914004D93F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		95AEEF1829D1C914004D93F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HTTP5Games/Preview Content\"";
+				DEVELOPMENT_TEAM = 6PN2A26K4M;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ri.HTTP5Games;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		95AEEF1929D1C914004D93F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HTTP5Games/Preview Content\"";
+				DEVELOPMENT_TEAM = 6PN2A26K4M;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ri.HTTP5Games;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		95AEEF0429D1C913004D93F1 /* Build configuration list for PBXProject "HTTP5Games" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95AEEF1529D1C914004D93F1 /* Debug */,
+				95AEEF1629D1C914004D93F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95AEEF1729D1C914004D93F1 /* Build configuration list for PBXNativeTarget "HTTP5Games" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95AEEF1829D1C914004D93F1 /* Debug */,
+				95AEEF1929D1C914004D93F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9578D0D029D2CB6E00810FA5 /* XCRemoteSwiftPackageReference "GCDWebServer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/agcsoft-sia/GCDWebServer.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		95AEEF2029D1D292004D93F1 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9578D0D129D2CB6E00810FA5 /* GCDWebServers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9578D0D029D2CB6E00810FA5 /* XCRemoteSwiftPackageReference "GCDWebServer" */;
+			productName = GCDWebServers;
+		};
+		95AEEF2129D1D292004D93F1 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95AEEF2029D1D292004D93F1 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 95AEEF0129D1C913004D93F1 /* Project object */;
+}

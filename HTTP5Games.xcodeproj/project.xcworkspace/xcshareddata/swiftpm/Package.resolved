@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "gcdwebserver",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/agcsoft-sia/GCDWebServer.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "14f9eedb296c5b71fec971d8256ef3bfc20a2245"
+      }
+    },
+    {
+      "identity" : "zip",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/marmelroy/Zip.git",
+      "state" : {
+        "revision" : "67fa55813b9e7b3b9acee9c0ae501def28746d76",
+        "version" : "2.1.2"
+      }
+    }
+  ],
+  "version" : 2
+}
