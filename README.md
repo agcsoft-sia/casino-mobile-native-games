@@ -19,6 +19,8 @@
 
 На 20bet этот провайдер доступен под VPN Германия, например. 
 
+ссылка на игры https://habanerosystems.com/article/habanero---device-pack-ios-bundle-pack-for-io-en
+
 1. К урлу сессии нужно добавить параметр &devicepack=1 перед кодированием
 2. полученную закодированную урлу передать в параметр startup локального файла игры
     1. https://127.0.0.1:8000/?startup=https%3A\%2F\%2Fapp-a.insvr.com\%2Fgo.ashx%3Fbrandid%3D5785ac9a-8db7-ea11-96d2-281878588c2e%26ifrm%3D1%26keyname%3DSGRainbowmania%26lobbyurl%3Dhttps%253A%252F%252Fsvkzjv.com%252Fcasino%26locale%3Den%26mode%3DReal%26token%3D449bcc71-5c58-4833-9ebe-e042ae38c025%2626devicepack%3D1
