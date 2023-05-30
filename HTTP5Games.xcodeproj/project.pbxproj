@@ -10,9 +10,6 @@
 		950EC7C029D2CD2A0072E2DF /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EC7BF29D2CD2A0072E2DF /* GameSession.swift */; };
 		950EC7C229D2F1920072E2DF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 950EC7C129D2F1920072E2DF /* README.md */; };
 		950EC7C429D2F5CC0072E2DF /* build_habanero.js in Resources */ = {isa = PBXBuildFile; fileRef = 950EC7C329D2F5CC0072E2DF /* build_habanero.js */; };
-		9578D0CB29D2AF4E00810FA5 /* HBShared.zip in Resources */ = {isa = PBXBuildFile; fileRef = 9578D0CA29D2AF4E00810FA5 /* HBShared.zip */; settings = {ASSET_TAGS = (habanero, ); }; };
-		9578D0CD29D2B0B100810FA5 /* SGRainbowmania.zip in Resources */ = {isa = PBXBuildFile; fileRef = 9578D0CC29D2B0B100810FA5 /* SGRainbowmania.zip */; settings = {ASSET_TAGS = ("habanero:SGRainbowmania", ); }; };
-		9578D0CF29D2B58B00810FA5 /* SGDragonTigerGate.zip in Resources */ = {isa = PBXBuildFile; fileRef = 9578D0CE29D2B58B00810FA5 /* SGDragonTigerGate.zip */; settings = {ASSET_TAGS = ("habanero:SGDragonTigerGate", ); }; };
 		9578D0D229D2CB6E00810FA5 /* GCDWebServers in Frameworks */ = {isa = PBXBuildFile; productRef = 9578D0D129D2CB6E00810FA5 /* GCDWebServers */; };
 		95AEEF0D29D1C913004D93F1 /* HTTP5GamesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AEEF0C29D1C913004D93F1 /* HTTP5GamesApp.swift */; };
 		95AEEF0F29D1C913004D93F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AEEF0E29D1C913004D93F1 /* ContentView.swift */; };
@@ -30,9 +27,6 @@
 		950EC7BF29D2CD2A0072E2DF /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		950EC7C129D2F1920072E2DF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		950EC7C329D2F5CC0072E2DF /* build_habanero.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = build_habanero.js; sourceTree = "<group>"; };
-		9578D0CA29D2AF4E00810FA5 /* HBShared.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = HBShared.zip; sourceTree = "<group>"; };
-		9578D0CC29D2B0B100810FA5 /* SGRainbowmania.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = SGRainbowmania.zip; sourceTree = "<group>"; };
-		9578D0CE29D2B58B00810FA5 /* SGDragonTigerGate.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = SGDragonTigerGate.zip; sourceTree = "<group>"; };
 		95AEEF0929D1C913004D93F1 /* HTTP5Games.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTTP5Games.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AEEF0C29D1C913004D93F1 /* HTTP5GamesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP5GamesApp.swift; sourceTree = "<group>"; };
 		95AEEF0E29D1C913004D93F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,7 +77,6 @@
 			children = (
 				950EC7C129D2F1920072E2DF /* README.md */,
 				950EC7C329D2F5CC0072E2DF /* build_habanero.js */,
-				95AEEF1A29D1C934004D93F1 /* NativeGames */,
 				95AEEF0B29D1C913004D93F1 /* HTTP5Games */,
 				95AEEF0A29D1C913004D93F1 /* Products */,
 			);
@@ -116,24 +109,6 @@
 				95AEEF1329D1C914004D93F1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		95AEEF1A29D1C934004D93F1 /* NativeGames */ = {
-			isa = PBXGroup;
-			children = (
-				95AEEF1B29D1C93E004D93F1 /* Habanero */,
-			);
-			path = NativeGames;
-			sourceTree = "<group>";
-		};
-		95AEEF1B29D1C93E004D93F1 /* Habanero */ = {
-			isa = PBXGroup;
-			children = (
-				9578D0CA29D2AF4E00810FA5 /* HBShared.zip */,
-				9578D0CC29D2B0B100810FA5 /* SGRainbowmania.zip */,
-				9578D0CE29D2B58B00810FA5 /* SGDragonTigerGate.zip */,
-			);
-			path = Habanero;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,11 +184,8 @@
 			files = (
 				950EC7C229D2F1920072E2DF /* README.md in Resources */,
 				95AEEF1429D1C914004D93F1 /* Preview Assets.xcassets in Resources */,
-				9578D0CD29D2B0B100810FA5 /* SGRainbowmania.zip in Resources */,
-				9578D0CF29D2B58B00810FA5 /* SGDragonTigerGate.zip in Resources */,
 				950EC7C429D2F5CC0072E2DF /* build_habanero.js in Resources */,
 				95AEEF1129D1C914004D93F1 /* Assets.xcassets in Resources */,
-				9578D0CB29D2AF4E00810FA5 /* HBShared.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
