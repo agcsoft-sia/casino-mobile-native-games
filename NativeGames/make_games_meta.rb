@@ -1,39 +1,59 @@
 #!/usr/bin/env ruby
 
 require 'json'
+require 'pathname'
 
-root = __dir__
-Dir.chdir(root)
+# Utils
 
-meta = {}
-
-# Foreach providers folders
-Dir.each_child(Dir.pwd) { |provider|
-    if Dir.exist?(provider) then
-        Dir.chdir(provider)
-        # Foreach games files
-        providerGames = []
+def games(provider)
+    providerGames = []
+    Dir.chdir(provider) {
         Dir.each_child(Dir.pwd) { |file|
             if File.file?(file) && File.extname(file) == ".zip" then
                 gameFileName = File.basename(file, ".*")
+                gamePath = Pathname.new(File.absolute_path(file)).relative_path_from(__dir__)
                 gameMeta = {
                     "id" => provider + ":" + gameFileName,
-                    "name" => gameFileName
+                    "name" => gameFileName,
+                    "path" => gamePath,
                 }
                 providerGames.push(gameMeta)
             end
         }
-        meta[provider] = {
-            "name": provider,
-            "games": providerGames
-        }
-        Dir.chdir("..")
+    }
+    return providerGames
+end
+
+# Main
+
+Dir.chdir(__dir__)
+
+meta = {}
+providersMeta = []
+gamesMeta = {}
+
+# Foreach providers folders
+Dir.each_child(Dir.pwd) { |provider|
+    if Dir.exist?(provider) then
+        providerGames = games(provider)
+        if !providerGames.empty? then
+            providerMeta = {
+                "id": provider
+            }
+            providersMeta.push(providerMeta)
+            gamesMeta[provider] = providerGames
+        end
     end
 }
 
-Dir.chdir(root)
-metaFile = File.new("meta.json", "w")
-metaFile.write(meta.to_json)
-metaFile.close
+providersMetaFile = File.new("providers.json", "w")
+providersMetaFile.write(providersMeta.to_json)
+providersMetaFile.close
+puts "providers.json is generated"
 
-puts "meta.json is generated"
+gamesMetaFile = File.new("games.json", "w")
+gamesMetaFile.write(gamesMeta.to_json)
+gamesMetaFile.close
+puts "games.json is generated"
+
+puts "Done"
