@@ -19,8 +19,8 @@
 
 ## Импорт игр в проект
 
-1. Запустить скрипт import_games.rb xcodepoj_name games_folder
-    1. ./import_games.rb HTTP5Games.xcodeproj NativeGames
+1. Запустить скрипт import_games.rb xcodepoj_name games_folder providers_meta games_meta
+    1. ./import_games.rb HTTP5Games.xcodeproj NativeGames providers.json games.json
 
 ## Хранение и запуск ODR игры
 
