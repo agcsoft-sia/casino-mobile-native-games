@@ -12,7 +12,7 @@ def games(provider)
             if File.file?(file) && File.extname(file) == ".zip" then
                 gameFileName = File.basename(file, ".*")
                 gameIdentifier = gameFileName
-                gameIdentifier["_"] = ":"
+                gameIdentifier["__"] = ":"
                 gamePath = Pathname.new(File.absolute_path(file)).relative_path_from(__dir__)
                 gameMeta = {
                     "identifier" => gameIdentifier,

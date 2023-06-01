@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30B00B909D7BAFCCB0257D67 /* pragmaticexternal_TheAmazingMoneyMachine1.zip in Resources */ = {isa = PBXBuildFile; fileRef = 2CA2FA54A00F2AB832B6E73F /* pragmaticexternal_TheAmazingMoneyMachine1.zip */; settings = {ASSET_TAGS = ("pragmaticexternal:TheAmazingMoneyMachine1", ); }; };
-		464E8FB92A73C879326415AB /* pragmaticexternal_BigBassBonanza.zip in Resources */ = {isa = PBXBuildFile; fileRef = C2124ECDBAFE4F19554728B8 /* pragmaticexternal_BigBassBonanza.zip */; settings = {ASSET_TAGS = ("pragmaticexternal:BigBassBonanza", ); }; };
-		4D81861DF65703A0D0DD70B7 /* habanero_SGDragonTigerGate.zip in Resources */ = {isa = PBXBuildFile; fileRef = 8B4FD612C2C678FC65D2B683 /* habanero_SGDragonTigerGate.zip */; settings = {ASSET_TAGS = ("habanero:SGDragonTigerGate", ); }; };
-		64F4ADE1713CDD97463CBD39 /* habanero_SGRainbowmania.zip in Resources */ = {isa = PBXBuildFile; fileRef = 6079601DC3C178BA0E36362E /* habanero_SGRainbowmania.zip */; settings = {ASSET_TAGS = ("habanero:SGRainbowmania", ); }; };
+		2AF6D354603D4AE846CAD9E4 /* habanero__SGDragonTigerGate.zip in Resources */ = {isa = PBXBuildFile; fileRef = FBE9AF8E62C713AA1E8F1C73 /* habanero__SGDragonTigerGate.zip */; settings = {ASSET_TAGS = ("habanero:SGDragonTigerGate", ); }; };
+		636C0DFE381F25690BC9EA5F /* pragmaticexternal__TheAmazingMoneyMachine1.zip in Resources */ = {isa = PBXBuildFile; fileRef = E420E3DBD6374089D932CC1D /* pragmaticexternal__TheAmazingMoneyMachine1.zip */; settings = {ASSET_TAGS = ("pragmaticexternal:TheAmazingMoneyMachine1", ); }; };
+		7E895B13B7A84479A7A61D95 /* habanero__SGRainbowmania.zip in Resources */ = {isa = PBXBuildFile; fileRef = 1322B3F79E98FC7741079B6D /* habanero__SGRainbowmania.zip */; settings = {ASSET_TAGS = ("habanero:SGRainbowmania", ); }; };
 		950EC7C029D2CD2A0072E2DF /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EC7BF29D2CD2A0072E2DF /* GameSession.swift */; };
 		950EC7C229D2F1920072E2DF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 950EC7C129D2F1920072E2DF /* README.md */; };
 		950EC7C429D2F5CC0072E2DF /* build_habanero.js in Resources */ = {isa = PBXBuildFile; fileRef = 950EC7C329D2F5CC0072E2DF /* build_habanero.js */; };
@@ -25,12 +24,12 @@
 		95AEEF2929D1D4CA004D93F1 /* GameServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AEEF2829D1D4CA004D93F1 /* GameServer.swift */; };
 		95AEEF2B29D1D7E3004D93F1 /* WebContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AEEF2A29D1D7E3004D93F1 /* WebContentView.swift */; };
 		95AEEF2D29D1D80D004D93F1 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AEEF2C29D1D80D004D93F1 /* WebView.swift */; };
+		D529C0E7F43471409BBDC7F9 /* pragmaticexternal__BigBassBonanza.zip in Resources */ = {isa = PBXBuildFile; fileRef = 45086570FC68E43E29CE42E3 /* pragmaticexternal__BigBassBonanza.zip */; settings = {ASSET_TAGS = ("pragmaticexternal:BigBassBonanza", ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2CA2FA54A00F2AB832B6E73F /* pragmaticexternal_TheAmazingMoneyMachine1.zip */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.zip; path = pragmaticexternal_TheAmazingMoneyMachine1.zip; sourceTree = "<group>"; };
-		6079601DC3C178BA0E36362E /* habanero_SGRainbowmania.zip */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.zip; path = habanero_SGRainbowmania.zip; sourceTree = "<group>"; };
-		8B4FD612C2C678FC65D2B683 /* habanero_SGDragonTigerGate.zip */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.zip; path = habanero_SGDragonTigerGate.zip; sourceTree = "<group>"; };
+		1322B3F79E98FC7741079B6D /* habanero__SGRainbowmania.zip */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.zip; path = habanero__SGRainbowmania.zip; sourceTree = "<group>"; };
+		45086570FC68E43E29CE42E3 /* pragmaticexternal__BigBassBonanza.zip */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.zip; path = pragmaticexternal__BigBassBonanza.zip; sourceTree = "<group>"; };
 		950EC7BF29D2CD2A0072E2DF /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		950EC7C129D2F1920072E2DF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		950EC7C329D2F5CC0072E2DF /* build_habanero.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = build_habanero.js; sourceTree = "<group>"; };
@@ -44,7 +43,8 @@
 		95AEEF2829D1D4CA004D93F1 /* GameServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameServer.swift; sourceTree = "<group>"; };
 		95AEEF2A29D1D7E3004D93F1 /* WebContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContentView.swift; sourceTree = "<group>"; };
 		95AEEF2C29D1D80D004D93F1 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
-		C2124ECDBAFE4F19554728B8 /* pragmaticexternal_BigBassBonanza.zip */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.zip; path = pragmaticexternal_BigBassBonanza.zip; sourceTree = "<group>"; };
+		E420E3DBD6374089D932CC1D /* pragmaticexternal__TheAmazingMoneyMachine1.zip */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.zip; path = pragmaticexternal__TheAmazingMoneyMachine1.zip; sourceTree = "<group>"; };
+		FBE9AF8E62C713AA1E8F1C73 /* habanero__SGDragonTigerGate.zip */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.zip; path = habanero__SGDragonTigerGate.zip; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6035F5B7F3D8260188ABC6DF /* habanero */ = {
+		213F6B43D7E7F2DA77202B39 /* NativeGames */ = {
 			isa = PBXGroup;
 			children = (
-				8B4FD612C2C678FC65D2B683 /* habanero_SGDragonTigerGate.zip */,
-				6079601DC3C178BA0E36362E /* habanero_SGRainbowmania.zip */,
+				F06CF4F6C79866B36042E934 /* habanero */,
+				D9D8E590DF47828C9437A361 /* pragmaticplay */,
 			);
-			name = habanero;
-			path = habanero;
+			name = NativeGames;
+			path = NativeGames;
 			sourceTree = "<group>";
 		};
 		950EC7BD29D2CCD80072E2DF /* Views */ = {
@@ -97,7 +97,7 @@
 				950EC7C329D2F5CC0072E2DF /* build_habanero.js */,
 				95AEEF0B29D1C913004D93F1 /* HTTP5Games */,
 				95AEEF0A29D1C913004D93F1 /* Products */,
-				C8874511A05773F5A09E7146 /* NativeGames */,
+				213F6B43D7E7F2DA77202B39 /* NativeGames */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,24 +130,24 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		C8874511A05773F5A09E7146 /* NativeGames */ = {
+		D9D8E590DF47828C9437A361 /* pragmaticplay */ = {
 			isa = PBXGroup;
 			children = (
-				6035F5B7F3D8260188ABC6DF /* habanero */,
-				DFB266077D2D65F2C86761EC /* pragmaticplay */,
-			);
-			name = NativeGames;
-			path = NativeGames;
-			sourceTree = "<group>";
-		};
-		DFB266077D2D65F2C86761EC /* pragmaticplay */ = {
-			isa = PBXGroup;
-			children = (
-				C2124ECDBAFE4F19554728B8 /* pragmaticexternal_BigBassBonanza.zip */,
-				2CA2FA54A00F2AB832B6E73F /* pragmaticexternal_TheAmazingMoneyMachine1.zip */,
+				45086570FC68E43E29CE42E3 /* pragmaticexternal__BigBassBonanza.zip */,
+				E420E3DBD6374089D932CC1D /* pragmaticexternal__TheAmazingMoneyMachine1.zip */,
 			);
 			name = pragmaticplay;
 			path = pragmaticplay;
+			sourceTree = "<group>";
+		};
+		F06CF4F6C79866B36042E934 /* habanero */ = {
+			isa = PBXGroup;
+			children = (
+				1322B3F79E98FC7741079B6D /* habanero__SGRainbowmania.zip */,
+				FBE9AF8E62C713AA1E8F1C73 /* habanero__SGDragonTigerGate.zip */,
+			);
+			name = habanero;
+			path = habanero;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,10 +220,10 @@
 				95AEEF1429D1C914004D93F1 /* Preview Assets.xcassets in Resources */,
 				950EC7C429D2F5CC0072E2DF /* build_habanero.js in Resources */,
 				95AEEF1129D1C914004D93F1 /* Assets.xcassets in Resources */,
-				4D81861DF65703A0D0DD70B7 /* habanero_SGDragonTigerGate.zip in Resources */,
-				64F4ADE1713CDD97463CBD39 /* habanero_SGRainbowmania.zip in Resources */,
-				464E8FB92A73C879326415AB /* pragmaticexternal_BigBassBonanza.zip in Resources */,
-				30B00B909D7BAFCCB0257D67 /* pragmaticexternal_TheAmazingMoneyMachine1.zip in Resources */,
+				7E895B13B7A84479A7A61D95 /* habanero__SGRainbowmania.zip in Resources */,
+				2AF6D354603D4AE846CAD9E4 /* habanero__SGDragonTigerGate.zip in Resources */,
+				D529C0E7F43471409BBDC7F9 /* pragmaticexternal__BigBassBonanza.zip in Resources */,
+				636C0DFE381F25690BC9EA5F /* pragmaticexternal__TheAmazingMoneyMachine1.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

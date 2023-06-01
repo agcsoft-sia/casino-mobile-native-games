@@ -9,7 +9,7 @@ def searchIdentifier(gamesTable, filename)
     gamesTable.each { |row|
         if row[3] == filename then
             identifier = row[2]
-            identifier[":"] = "_"
+            identifier[":"] = "__"
             return identifier
         end
     }
