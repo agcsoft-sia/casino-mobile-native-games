@@ -38,7 +38,7 @@ Dir.each_child(Dir.pwd) { |provider|
         providerGames = games(provider)
         if !providerGames.empty? then
             providerMeta = {
-                "id": provider
+                "name": provider
             }
             providersMeta.push(providerMeta)
             gamesMeta[provider] = providerGames
