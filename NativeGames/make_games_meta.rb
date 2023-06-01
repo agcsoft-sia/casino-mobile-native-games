@@ -11,10 +11,11 @@ def games(provider)
         Dir.each_child(Dir.pwd) { |file|
             if File.file?(file) && File.extname(file) == ".zip" then
                 gameFileName = File.basename(file, ".*")
+                gameIdentifier = gameFileName
+                gameIdentifier["_"] = ":"
                 gamePath = Pathname.new(File.absolute_path(file)).relative_path_from(__dir__)
                 gameMeta = {
-                    "id" => provider + ":" + gameFileName,
-                    "name" => gameFileName,
+                    "identifier" => gameIdentifier,
                     "path" => gamePath,
                 }
                 providerGames.push(gameMeta)

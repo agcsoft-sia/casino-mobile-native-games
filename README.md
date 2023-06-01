@@ -1,8 +1,30 @@
 # Casino native games
+
+## Подготовка игр
+
+Игры провайдеров нужно подготовить перед импортом, названия архивов нужно переименовать в идентификаторы игр запроса v3/casino/game. В этом проект две папки с неподготовленныами играми habanero_dirty и pragmaticplay_dirty. Идентификаторы нужно взять из соответствующих таблиц habanero.csv и pragmatic.csv. Название архива с игрой является identifier2 в таблице. В итоге название архива должно равняться identifier (знак ":" будет заменен на "_").
+
+1. запустить скрипт ./normalize_game_files.rb source_dir table.csv provider
+    1. запустить скрипт ./normalize_game_files.rb pragmaticplay_dirty pragmatic.csv pragmaticplay
+    2. запустить скрипт ./normalize_game_files.rb habanero_dirty habanero.csv habanero
+2. перенести созданные директории pragmaticplay и habanero в директорию NativeGames (название директорий соответствует названию провайдера)
+
+## Cоздание meta данных игры
+
+После подготовки игр необходимо создать метаданные о провайдерах и играх 
+
+1. запустить скрип ./NativeGames/make_games_meta.rb
+2. сгенерированный файл providers.json хранит данные о провайдерах
+3. сгенерированный файл games.json хранит данные об играх 
+
+## Импорт игр в проект
+
+1. Запустить скрипт import_games.rb xcodepoj_name games_folder
+    1. ./import_games.rb HTTP5Games.xcodeproj NativeGames
+
 ## Хранение и запуск ODR игры
 
-1. Запустить скрипт import_games.rb
-2. Получить ORD архив, разархивировать в отдельную директорию
+1. Получить ORD архив, разархивировать в отдельную директорию
 3. Получить параметры сессии для игры
 4. Запустить локальный сервер, указать директорию разархивированной игры и index файл
 5. Передать в игру параметр сессии
