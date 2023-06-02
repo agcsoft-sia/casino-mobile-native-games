@@ -3,9 +3,12 @@
 require 'fileutils'
 require 'pathname'
 require 'csv'
+require 'zip'
+require 'zip/filesystem'
 
 # Utils
-def searchIdentifier(gamesTable, filename)
+
+def search_identifier(gamesTable, filename)
     gamesTable.each { |row|
         if row[3] == filename then
             identifier = row[2]
@@ -14,6 +17,28 @@ def searchIdentifier(gamesTable, filename)
         end
     }
     return ""
+end
+
+def normilize_file_structure(zip_file_path, game_identifier)
+    Zip::File.open(zip_file_path) { |zip_file|
+        root_folder_name = "#{zip_file.dir.glob("*").first}"
+        root_html_name = "#{root_folder_name}"
+        root_html_name["/"] = ".html"
+        new_root_folder_name = "#{game_identifier}/"
+        
+        # Rename all files
+        zip_file.each { |entry|
+            entry_new_name = "#{entry.name}"
+            if entry_new_name.include?(root_folder_name) then
+                entry_new_name[root_folder_name] = new_root_folder_name
+                zip_file.rename(entry, entry_new_name)
+            else
+                puts "Warning: Something is worng with #{entry} during normalized process"
+            end
+        }
+        # Rename index file
+        zip_file.rename("#{root_folder_name}#{root_html_name}", "#{new_root_folder_name}index.html")
+    }
 end
 
 # Main
@@ -50,18 +75,20 @@ Dir.chdir(sourceFolderName) {
     Dir.each_child(Dir.pwd) { |file|
         if File.file?(file) && File.extname(file) == ".zip" then
             gameFileName = File.basename(file, ".*")
-            normalizedGameFileName = searchIdentifier(gamesTable, gameFileName)
-            if normalizedGameFileName == "" then
+            game_identifier = search_identifier(gamesTable, gameFileName)
+            if game_identifier == "" then
                 puts "Warning: File " + file + " doesn't exists in games table"
                 next
             end
-            normalizedGameFileName = normalizedGameFileName + ".zip"
+            normalizedGameFileName = "#{game_identifier}.zip"
             normalizedCopyPath = Pathname.new(destinationDirPath) + normalizedGameFileName
+            
             FileUtils.cp(file, normalizedCopyPath)
-            puts "File " + file + " copied to " + destinationFolderName + "/" + normalizedGameFileName
+            normilize_file_structure(normalizedCopyPath, game_identifier)
+            
+            puts "File " + file + " copied to " + destinationFolderName + "/" + normalizedGameFileName + " and normalized"
         end
     }
 }
-
 
 puts "Done"
