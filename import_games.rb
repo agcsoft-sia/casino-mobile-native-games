@@ -9,6 +9,10 @@ games_folder_name = ARGV[1] || ""
 providers_meta_file_name = ARGV[2] || ""
 games_meta_file_name = ARGV[3] || ""
 
+games_dir_path = File.absolute_path(games_folder_name)
+providers_meta_file_path = File.absolute_path(providers_meta_file_name)
+games_meta_file_path = File.absolute_path(games_meta_file_name)
+
 if project.empty? then
     puts "Error: First arg must contains Xcode project name"
     exit
@@ -18,31 +22,27 @@ elsif games_folder_name.empty? then
 elsif providers_meta_file_name.empty? then
     puts "Error: Third arg must contains providers meta file name"
     exit
-elsif games_folder_name.empty? then
+elsif games_meta_file_name.empty? then
     puts "Error: Fourth arg must contains games meta file name"
     exit
+elsif !Dir.exist?(games_dir_path) then
+    puts "Error: Games folder does not exists"
+    exit
+elsif !File.file?(providers_meta_file_path) then
+    puts "Error: Providers meta file " + providers_meta_file_name + " doesn't exists"
+    exit
+elsif !File.file?(games_meta_file_path) then
+    puts "Error: Games meta file " + games_meta_file_name + " doesn't exists"
+    exit
 end
-
-Dir.chdir(__dir__)
 
 project_path = File.absolute_path(project)
 project = Xcodeproj::Project.open(project_path)
 target = project.targets.first
 
-games_dir_path = File.absolute_path(games_folder_name)
 games_group = project.new_group(games_folder_name, games_dir_path)
 
 Dir.chdir(games_folder_name) {
-    providers_meta_file_path = File.absolute_path(providers_meta_file_name)
-    games_meta_file_path = File.absolute_path(games_meta_file_name)
-    if !File.file?(providers_meta_file_path) then
-        puts "Error: Providers meta file " + providers_meta_file_name + " doesn't exists"
-        exit
-    elsif !File.file?(games_meta_file_path) then
-        puts "Error: Games meta file " + games_meta_file_name + " doesn't exists"
-        exit
-    end
-    
     providers_meta_file = File.open(providers_meta_file_path).read
     providers_meta = JSON.parse(providers_meta_file)
     games_meta_file = File.open(games_meta_file_path).read
@@ -61,15 +61,17 @@ Dir.chdir(games_folder_name) {
         
         provider_games.each { |game|
             identifier = game["identifier"]
-            path = game["path"]
+            game_path = game["path"]
+            game_path = Pathname.new(__dir__) + game["path"]
             
-            if !File.file?(path) then
-                puts "Warning: " + path + " folder doesn't exists"
+            if !File.file?(game_path) then
+                puts "Warning: " + File.absolute_path(game_path) + " file doesn't exists"
                 next
             end
             
-            path_in_provider_group = Pathname.new(File.absolute_path(path)).relative_path_from(provider_dir_path)
-            game_ref = provider_group.new_reference(path_in_provider_group)
+            path_in_provider_dir = Pathname.new(File.absolute_path(game_path)).relative_path_from(provider_dir_path)
+            
+            game_ref = provider_group.new_reference(path_in_provider_dir)
             target.add_on_demand_resources({ identifier => [game_ref] })
         }
     }

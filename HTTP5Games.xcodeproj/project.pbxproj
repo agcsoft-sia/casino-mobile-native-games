@@ -12,7 +12,6 @@
 		7E895B13B7A84479A7A61D95 /* habanero__SGRainbowmania.zip in Resources */ = {isa = PBXBuildFile; fileRef = 1322B3F79E98FC7741079B6D /* habanero__SGRainbowmania.zip */; settings = {ASSET_TAGS = ("habanero:SGRainbowmania", ); }; };
 		950EC7C029D2CD2A0072E2DF /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950EC7BF29D2CD2A0072E2DF /* GameSession.swift */; };
 		950EC7C229D2F1920072E2DF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 950EC7C129D2F1920072E2DF /* README.md */; };
-		950EC7C429D2F5CC0072E2DF /* build_habanero.js in Resources */ = {isa = PBXBuildFile; fileRef = 950EC7C329D2F5CC0072E2DF /* build_habanero.js */; };
 		9578D0D229D2CB6E00810FA5 /* GCDWebServers in Frameworks */ = {isa = PBXBuildFile; productRef = 9578D0D129D2CB6E00810FA5 /* GCDWebServers */; };
 		95AEEF0D29D1C913004D93F1 /* HTTP5GamesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AEEF0C29D1C913004D93F1 /* HTTP5GamesApp.swift */; };
 		95AEEF0F29D1C913004D93F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AEEF0E29D1C913004D93F1 /* ContentView.swift */; };
@@ -32,7 +31,6 @@
 		45086570FC68E43E29CE42E3 /* pragmaticexternal__BigBassBonanza.zip */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.zip; path = pragmaticexternal__BigBassBonanza.zip; sourceTree = "<group>"; };
 		950EC7BF29D2CD2A0072E2DF /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		950EC7C129D2F1920072E2DF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		950EC7C329D2F5CC0072E2DF /* build_habanero.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = build_habanero.js; sourceTree = "<group>"; };
 		95AEEF0929D1C913004D93F1 /* HTTP5Games.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTTP5Games.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AEEF0C29D1C913004D93F1 /* HTTP5GamesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP5GamesApp.swift; sourceTree = "<group>"; };
 		95AEEF0E29D1C913004D93F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,7 +64,6 @@
 				F06CF4F6C79866B36042E934 /* habanero */,
 				D9D8E590DF47828C9437A361 /* pragmaticplay */,
 			);
-			name = NativeGames;
 			path = NativeGames;
 			sourceTree = "<group>";
 		};
@@ -94,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				950EC7C129D2F1920072E2DF /* README.md */,
-				950EC7C329D2F5CC0072E2DF /* build_habanero.js */,
 				95AEEF0B29D1C913004D93F1 /* HTTP5Games */,
 				95AEEF0A29D1C913004D93F1 /* Products */,
 				213F6B43D7E7F2DA77202B39 /* NativeGames */,
@@ -136,7 +132,6 @@
 				45086570FC68E43E29CE42E3 /* pragmaticexternal__BigBassBonanza.zip */,
 				E420E3DBD6374089D932CC1D /* pragmaticexternal__TheAmazingMoneyMachine1.zip */,
 			);
-			name = pragmaticplay;
 			path = pragmaticplay;
 			sourceTree = "<group>";
 		};
@@ -146,7 +141,6 @@
 				1322B3F79E98FC7741079B6D /* habanero__SGRainbowmania.zip */,
 				FBE9AF8E62C713AA1E8F1C73 /* habanero__SGDragonTigerGate.zip */,
 			);
-			name = habanero;
 			path = habanero;
 			sourceTree = "<group>";
 		};
@@ -199,8 +193,8 @@
 			);
 			mainGroup = 95AEEF0029D1C913004D93F1;
 			packageReferences = (
-				95AEEF2029D1D292004D93F1 /* XCRemoteSwiftPackageReference "Zip.git" */,
-				9578D0D029D2CB6E00810FA5 /* XCRemoteSwiftPackageReference "GCDWebServer.git" */,
+				95AEEF2029D1D292004D93F1 /* XCRemoteSwiftPackageReference "Zip" */,
+				9578D0D029D2CB6E00810FA5 /* XCRemoteSwiftPackageReference "GCDWebServer" */,
 			);
 			productRefGroup = 95AEEF0A29D1C913004D93F1 /* Products */;
 			projectDirPath = "";
@@ -218,7 +212,6 @@
 			files = (
 				950EC7C229D2F1920072E2DF /* README.md in Resources */,
 				95AEEF1429D1C914004D93F1 /* Preview Assets.xcassets in Resources */,
-				950EC7C429D2F5CC0072E2DF /* build_habanero.js in Resources */,
 				95AEEF1129D1C914004D93F1 /* Assets.xcassets in Resources */,
 				7E895B13B7A84479A7A61D95 /* habanero__SGRainbowmania.zip in Resources */,
 				2AF6D354603D4AE846CAD9E4 /* habanero__SGDragonTigerGate.zip in Resources */,
@@ -444,7 +437,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9578D0D029D2CB6E00810FA5 /* XCRemoteSwiftPackageReference "GCDWebServer.git" */ = {
+		9578D0D029D2CB6E00810FA5 /* XCRemoteSwiftPackageReference "GCDWebServer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/agcsoft-sia/GCDWebServer.git";
 			requirement = {
@@ -452,7 +445,7 @@
 				kind = branch;
 			};
 		};
-		95AEEF2029D1D292004D93F1 /* XCRemoteSwiftPackageReference "Zip.git" */ = {
+		95AEEF2029D1D292004D93F1 /* XCRemoteSwiftPackageReference "Zip" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/Zip.git";
 			requirement = {
@@ -465,12 +458,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		9578D0D129D2CB6E00810FA5 /* GCDWebServers */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9578D0D029D2CB6E00810FA5 /* XCRemoteSwiftPackageReference "GCDWebServer.git" */;
+			package = 9578D0D029D2CB6E00810FA5 /* XCRemoteSwiftPackageReference "GCDWebServer" */;
 			productName = GCDWebServers;
 		};
 		95AEEF2129D1D292004D93F1 /* Zip */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 95AEEF2029D1D292004D93F1 /* XCRemoteSwiftPackageReference "Zip.git" */;
+			package = 95AEEF2029D1D292004D93F1 /* XCRemoteSwiftPackageReference "Zip" */;
 			productName = Zip;
 		};
 /* End XCSwiftPackageProductDependency section */

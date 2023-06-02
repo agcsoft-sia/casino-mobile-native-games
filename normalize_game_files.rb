@@ -39,8 +39,6 @@ elsif !File.exist?(gamesTableFileName) then
     exit
 end
 
-Dir.chdir(__dir__)
-
 if !Dir.exist?(destinationFolderName) then
     Dir.mkdir(destinationFolderName)
     puts "Destination folder is created"

@@ -27,24 +27,33 @@ end
 
 # Main
 
-Dir.chdir(__dir__)
+sourceFolderName = ARGV[0] || ""
+
+if sourceFolderName.empty? then
+    puts "Error: First arg must contains source folder name"
+    exit
+elsif !Dir.exist?(sourceFolderName) then
+    puts "Error: Source folder does not exists"
+    exit
+end
 
 meta = {}
 providersMeta = []
 gamesMeta = {}
 
-# Foreach providers folders
-Dir.each_child(Dir.pwd) { |provider|
-    if Dir.exist?(provider) then
-        providerGames = games(provider)
-        if !providerGames.empty? then
-            providerMeta = {
-                "name": provider
-            }
-            providersMeta.push(providerMeta)
-            gamesMeta[provider] = providerGames
+Dir.chdir(sourceFolderName) {
+    Dir.each_child(Dir.pwd) { |provider|
+        if Dir.exist?(provider) then
+            providerGames = games(provider)
+            if !providerGames.empty? then
+                providerMeta = {
+                    "name": provider
+                }
+                providersMeta.push(providerMeta)
+                gamesMeta[provider] = providerGames
+            end
         end
-    end
+    }
 }
 
 providersMetaFile = File.new("providers.json", "w")
