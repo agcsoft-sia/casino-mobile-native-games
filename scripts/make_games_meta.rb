@@ -5,7 +5,7 @@ require 'pathname'
 
 # Utils
 
-def games(provider)
+def games(provider, source_path)
     providerGames = []
     Dir.chdir(provider) {
         Dir.each_child(Dir.pwd) { |file|
@@ -13,7 +13,7 @@ def games(provider)
                 gameFileName = File.basename(file, ".*")
                 gameIdentifier = gameFileName
                 gameIdentifier["__"] = ":"
-                gamePath = Pathname.new(File.absolute_path(file)).relative_path_from(__dir__)
+                gamePath = Pathname.new(File.absolute_path(file)).relative_path_from(Pathname.new(source_path).parent)
                 gameMeta = {
                     "identifier" => gameIdentifier,
                     "path" => gamePath,
@@ -25,26 +25,27 @@ def games(provider)
     return providerGames
 end
 
-# Main
+source_folder_name = ARGV[0] || ""
+source_path = File.absolute_path(source_folder_name)
 
-sourceFolderName = ARGV[0] || ""
-
-if sourceFolderName.empty? then
+if source_folder_name.empty? then
     puts "Error: First arg must contains source folder name"
     exit
-elsif !Dir.exist?(sourceFolderName) then
+elsif !Dir.exist?(source_path) then
     puts "Error: Source folder does not exists"
     exit
 end
+
+# Main
 
 meta = {}
 providersMeta = []
 gamesMeta = {}
 
-Dir.chdir(sourceFolderName) {
+Dir.chdir(source_folder_name) {
     Dir.each_child(Dir.pwd) { |provider|
         if Dir.exist?(provider) then
-            providerGames = games(provider)
+            providerGames = games(provider, source_path)
             if !providerGames.empty? then
                 providerMeta = {
                     "name": provider
