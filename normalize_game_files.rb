@@ -21,9 +21,11 @@ end
 
 def normilize_file_structure(zip_file_path, game_identifier)
     Zip::File.open(zip_file_path) { |zip_file|
-        root_folder_name = "#{zip_file.dir.glob("*").first}"
-        root_html_name = "#{root_folder_name}"
-        root_html_name["/"] = ".html"
+        root_folder_name = "#{zip_file.first}".split("/").first
+        if root_folder_name.empty? then
+            return false
+        end
+        root_html_name = "#{root_folder_name}.html"
         new_root_folder_name = "#{game_identifier}/"
         
         # Rename all files
@@ -33,12 +35,13 @@ def normilize_file_structure(zip_file_path, game_identifier)
                 entry_new_name[root_folder_name] = new_root_folder_name
                 zip_file.rename(entry, entry_new_name)
             else
-                puts "Warning: Something is worng with #{entry} during normalized process"
+                puts "Warning: Something is wrong with #{entry} during normalized process"
             end
         }
         # Rename index file
-        zip_file.rename("#{root_folder_name}#{root_html_name}", "#{new_root_folder_name}index.html")
+        zip_file.rename("#{root_folder_name}/#{root_html_name}", "#{new_root_folder_name}/index.html")
     }
+    return true
 end
 
 # Main
@@ -84,9 +87,12 @@ Dir.chdir(sourceFolderName) {
             normalizedCopyPath = Pathname.new(destinationDirPath) + normalizedGameFileName
             
             FileUtils.cp(file, normalizedCopyPath)
-            normilize_file_structure(normalizedCopyPath, game_identifier)
-            
-            puts "File " + file + " copied to " + destinationFolderName + "/" + normalizedGameFileName + " and normalized"
+            if normilize_file_structure(normalizedCopyPath, game_identifier) then
+                puts "File " + file + " copied to " + destinationFolderName + "/" + normalizedGameFileName + " and normalized"
+            else
+                FileUtils.rm(normalizedCopyPath)
+                puts "Warning: Something is wrong with " + file + " during normalized process"
+            end
         end
     }
 }
