@@ -62,16 +62,15 @@ Dir.chdir(games_folder_name) {
         provider_games.each { |game|
             identifier = game["identifier"]
             game_path = game["path"]
-            game_path = Pathname.new(__dir__) + game["path"]
+            game_path = Pathname.new(games_dir_path).parent + Pathname.new(game_path)
+            game_path_in_provider_dir = game_path.relative_path_from(Pathname.new(provider_dir_path))
             
             if !File.file?(game_path) then
                 puts "Warning: " + File.absolute_path(game_path) + " file doesn't exists"
                 next
             end
             
-            path_in_provider_dir = Pathname.new(File.absolute_path(game_path)).relative_path_from(provider_dir_path)
-            
-            game_ref = provider_group.new_reference(path_in_provider_dir)
+            game_ref = provider_group.new_reference(game_path_in_provider_dir)
             target.add_on_demand_resources({ identifier => [game_ref] })
         }
     }
