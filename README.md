@@ -4,24 +4,24 @@
 
 Игры провайдеров нужно подготовить перед импортом, названия архивов нужно переименовать в идентификаторы игр запроса v3/casino/game. В этом проект две папки с неподготовленныами играми habanero_dirty и pragmaticplay_dirty. Идентификаторы нужно взять из соответствующих таблиц habanero.csv и pragmatic.csv. Название архива с игрой является identifier2 в таблице. В итоге название архива должно равняться identifier (знак ":" будет заменен на "__").
 
-1. запустить скрипт ./normalize_game_files.rb source_dir table.csv provider
-    1. запустить скрипт ./normalize_game_files.rb pragmaticplay_dirty pragmatic.csv pragmaticplay
-    2. запустить скрипт ./normalize_game_files.rb habanero_dirty habanero.csv habanero
+1. запустить скрипт ./scripts/normalize_game_files.rb source_dir table.csv provider
+    1. запустить скрипт ./scripts/normalize_game_files.rb pragmaticplay_dirty pragmatic.csv pragmaticplay
+    2. запустить скрипт ./scripts/normalize_game_files.rb habanero_dirty habanero.csv habanero
 2. перенести созданные директории pragmaticplay и habanero в директорию NativeGames (название директорий соответствует названию провайдера)
 
 ## Cоздание meta данных игры
 
 После подготовки игр необходимо создать метаданные о провайдерах и играх 
 
-1. запустить скрип ./make_games_meta.rb games_folder_name
-    1. запустить скрипт ./make_games_meta.rb NativeGames
+1. запустить скрип ./scripts/make_games_meta.rb games_folder_name
+    1. запустить скрипт ./scripts/make_games_meta.rb NativeGames
 2. сгенерированный файл providers.json хранит данные о провайдерах
 3. сгенерированный файл games.json хранит данные об играх 
 
 ## Импорт игр в проект
 
 1. Запустить скрипт import_games.rb xcodepoj_name games_folder providers_meta games_meta
-    1. ./import_games.rb HTTP5Games.xcodeproj NativeGames providers.json games.json
+    1. ./scripts/import_games.rb HTTP5Games.xcodeproj NativeGames providers.json games.json
 
 ## Хранение и запуск ODR игры
 
