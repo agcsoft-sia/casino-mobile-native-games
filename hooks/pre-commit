@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Run generating meta data script"
+./scripts/make_games_meta.rb NativeGames
+git add .
