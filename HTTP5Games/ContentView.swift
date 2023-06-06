@@ -24,20 +24,22 @@ struct ContentView: View {
             TextField("Token", text: $token)
             Button("SGRainbowmania") {
                 openGame(
-                    gameTag: "habanero:SGRainbowmania",
-                    gameArchName: "SGRainbowmania.zip",
-                    sharedFolderTag: "habanero",
-                    sharedFolderArchName: "HBShared.zip",
-                    indexFilename: "SGRainbowmania.html"
+                    identifier: "habanero:SGRainbowmania"
                 )
             }
             Button("SGDragonTigerGate") {
                 openGame(
-                    gameTag: "habanero:SGDragonTigerGate",
-                    gameArchName: "SGDragonTigerGate.zip",
-                    sharedFolderTag: "habanero",
-                    sharedFolderArchName: "HBShared.zip",
-                    indexFilename: "SGDragonTigerGate.html"
+                    identifier: "habanero:SGDragonTigerGate"
+                )
+            }
+            Button("TheAmazingMoneyMachine1") {
+                openGame(
+                    identifier: "pragmaticexternal:TheAmazingMoneyMachine1"
+                )
+            }
+            Button("BigBassBonanza") {
+                openGame(
+                    identifier: "pragmaticexternal:BigBassBonanza"
                 )
             }
             if inProgress {
@@ -54,34 +56,26 @@ struct ContentView: View {
     }
     
     private func openGame(
-        gameTag: String,
-        gameArchName: String,
-        sharedFolderTag: String,
-        sharedFolderArchName: String,
-        indexFilename: String
+        identifier: String
     ) {
         Task {
             defer { inProgress = false }
             do {
                 inProgress = true
                 let session = GameSession(token: token)
-                var gameSession = try await session.create(identifier: gameTag)
+                var gameSession = try await session.create(identifier: identifier)
                 gameSession += "&devicepack=1"
                 gameSession = gameSession.addingPercentEncoding(withAllowedCharacters: .alphanumerics) ?? ""
-                let sharedArchPath = try await GameDownloader.shared.donwload(
-                    tag: sharedFolderTag,
-                    archName: sharedFolderArchName
-                )
+                let gameArchName = identifier.replacingOccurrences(of: ":", with: "__") + ".zip"
                 let gameArchPath = try await GameDownloader.shared.donwload(
-                    tag: gameTag,
+                    tag: identifier,
                     archName: gameArchName
                 )
                 let gamePath = try GameArchiver.shared.unzip(path: gameArchPath)
-                try GameArchiver.shared.unzip(path: sharedArchPath, destination: gamePath)
                 DispatchQueue.main.async { [gameSession] in
                     let url = GameServer.shared.start(
                         directoryPath: gamePath,
-                        indexFilename: indexFilename,
+                        indexFilename: "index.html",
                         session: gameSession
                     )
                     debugPrint(url)

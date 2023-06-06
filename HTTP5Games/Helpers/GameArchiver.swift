@@ -28,7 +28,7 @@ class GameArchiver {
             )
             return destination
         } else {
-            var urlPath = try Zip.quickUnzipFile(path)
+            var urlPath = try Zip.quickUnzipFile(path) 
             let folderName = path.lastPathComponent.replacingOccurrences(of: ".\(path.pathExtension)", with: "")
             urlPath.appendPathComponent(folderName)
             return urlPath
