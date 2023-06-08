@@ -14,7 +14,7 @@ enum Sheet: Identifiable {
 }
 
 struct ContentView: View {
-    @State var inProgress = false
+    @State var progress: Double = 0
     @State var sheet: Sheet?
     @State var token: String = ""
     
@@ -42,8 +42,9 @@ struct ContentView: View {
                     identifier: "pragmaticexternal:BigBassBonanza"
                 )
             }
-            if inProgress {
-                ProgressView()
+            if progress > 0 {
+                ProgressView.init(value: progress)
+                    .progressViewStyle(.linear)
             }
         }
         .sheet(item: $sheet, content: {
@@ -59,9 +60,14 @@ struct ContentView: View {
         identifier: String
     ) {
         Task {
-            defer { inProgress = false }
+            defer {
+                progress = 0
+                GameDownloader.shared.stop()
+            }
             do {
-                inProgress = true
+                let progress = GameDownloadProgress { value in
+                    withAnimation { self.progress = value }
+                }
                 let session = GameSession(token: token)
                 var gameSession = try await session.create(identifier: identifier)
                 gameSession += "&devicepack=1"
@@ -69,7 +75,8 @@ struct ContentView: View {
                 let gameArchName = identifier.replacingOccurrences(of: ":", with: "__") + ".zip"
                 let gameArchPath = try await GameDownloader.shared.donwload(
                     tag: identifier,
-                    archName: gameArchName
+                    archName: gameArchName,
+                    progressObserver: progress
                 )
                 let gamePath = try GameArchiver.shared.unzip(path: gameArchPath)
                 DispatchQueue.main.async { [gameSession] in

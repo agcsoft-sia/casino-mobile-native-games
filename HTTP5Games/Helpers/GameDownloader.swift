@@ -18,13 +18,46 @@ enum GameDownloaderError: Error {
     }
 }
 
+class GameDownloadProgress: NSObject {
+    init(handler: @escaping (Double) -> Void) {
+        self.handler = handler
+        super.init()
+    }
+    var context: UnsafeMutableRawPointer!
+    var handler: ((Double) -> Void)?
+    
+    override func observeValue(forKeyPath keyPath: String?,
+        of object: Any?,
+        change: [NSKeyValueChangeKey : Any]?,
+        context: UnsafeMutableRawPointer?) {
+
+      if context == context
+        && keyPath == "fractionCompleted" {
+
+          handler?((object as? Progress)?.fractionCompleted ?? 0)
+      }
+    }
+}
+
 class GameDownloader {
     static let shared = GameDownloader()
     
     private init() {}
     
-    func donwload(tag: String, archName: String) async throws -> URL {
-        let request = NSBundleResourceRequest(tags: [tag], bundle: .main)
+    func donwload(
+        tag: String,
+        archName: String,
+        progressObserver: GameDownloadProgress?
+    ) async throws -> URL {
+        self.progressObserver = progressObserver
+        self.request = NSBundleResourceRequest(tags: [tag], bundle: .main)
+        if let progressObserver = progressObserver {
+            request.progress.addObserver(
+                progressObserver,
+                forKeyPath: "fractionCompleted",
+                options: [.new, .initial],
+                context: progressObserver.context)
+        }
         let access = await request.conditionallyBeginAccessingResources()
         if !access {
             try await request.beginAccessingResources()
@@ -36,4 +69,15 @@ class GameDownloader {
         
         return gameArchPath
     }
+    
+    func stop() {
+        if let progressObserver = progressObserver {
+          request.progress.removeObserver(progressObserver,
+            forKeyPath: "fractionCompleted")
+        }
+        request.endAccessingResources()
+    }
+    
+    var request: NSBundleResourceRequest!
+    var progressObserver: GameDownloadProgress?
 }
