@@ -8,10 +8,16 @@
 import Foundation
 import GCDWebServers
 
+enum GameProvider {
+    case habanero
+    case pragmaticplay
+}
+
 class GameServer {
     static let shared = GameServer()
 
     func start(
+        provider: GameProvider,
         directoryPath: URL,
         indexFilename: String,
         session: String) -> URL {
@@ -26,22 +32,24 @@ class GameServer {
             server.start(withPort: 8081, bonjourName: nil)
             self.server = server
             
-            // Pragmatic
-            let launcherURL: URL! = server.serverURL?.appendingPathComponent("launcher.html")
-            var components = URLComponents(url: launcherURL, resolvingAgainstBaseURL: true)
-            var queryItems = components?.percentEncodedQueryItems ?? []
-            queryItems.append(.init(name: "url", value: session))
-            components?.percentEncodedQueryItems = queryItems
-            
-            // Habanero
-//            let launcherURL: URL! = server.serverURL?.appendingPathComponent("index.html")
-//            var components = URLComponents(url: launcherURL, resolvingAgainstBaseURL: true)
-//            var queryItems = components?.percentEncodedQueryItems ?? []
-//            queryItems.append(.init(name: "startup", value: session))
-//            components?.percentEncodedQueryItems = queryItems
-            
-            let url = components!.url!
-            return url
+            switch provider {
+            case .pragmaticplay:
+                let launcherURL: URL! = server.serverURL?.appendingPathComponent("launcher.html")
+                var components = URLComponents(url: launcherURL, resolvingAgainstBaseURL: true)
+                var queryItems = components?.percentEncodedQueryItems ?? []
+                queryItems.append(.init(name: "url", value: session))
+                components?.percentEncodedQueryItems = queryItems
+                let url = components!.url!
+                return url
+            case .habanero:
+                let launcherURL: URL! = server.serverURL?.appendingPathComponent("index.html")
+                var components = URLComponents(url: launcherURL, resolvingAgainstBaseURL: true)
+                var queryItems = components?.percentEncodedQueryItems ?? []
+                queryItems.append(.init(name: "startup", value: session))
+                components?.percentEncodedQueryItems = queryItems
+                let url = components!.url!
+                return url
+            }
         }
     
     func stop() {

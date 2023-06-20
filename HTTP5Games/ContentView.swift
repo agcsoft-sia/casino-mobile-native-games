@@ -24,27 +24,32 @@ struct ContentView: View {
             TextField("Token", text: $token)
             Button("SGRainbowmania") {
                 openGame(
-                    identifier: "habanero:SGRainbowmania"
+                    identifier: "habanero:SGRainbowmania",
+                    provider: .habanero
                 )
             }
             Button("SGDragonTigerGate") {
                 openGame(
-                    identifier: "habanero:SGDragonTigerGate"
+                    identifier: "habanero:SGDragonTigerGate",
+                    provider: .habanero
                 )
             }
             Button("TheAmazingMoneyMachine1") {
                 openGame(
-                    identifier: "pragmaticexternal:TheAmazingMoneyMachine1"
+                    identifier: "pragmaticexternal:TheAmazingMoneyMachine1",
+                    provider: .pragmaticplay
                 )
             }
             Button("BigBassBonanza") {
                 openGame(
-                    identifier: "pragmaticexternal:BigBassBonanza"
+                    identifier: "pragmaticexternal:BigBassBonanza",
+                    provider: .pragmaticplay
                 )
             }
             Button("Undefined") {
                 openGame(
-                    identifier: "undefined:undefined"
+                    identifier: "undefined:undefined",
+                    provider: .pragmaticplay
                 )
             }
             if progress > 0 {
@@ -62,7 +67,8 @@ struct ContentView: View {
     }
     
     private func openGame(
-        identifier: String
+        identifier: String,
+        provider: GameProvider
     ) {
         Task {
             defer {
@@ -86,6 +92,7 @@ struct ContentView: View {
                 let gamePath = try GameArchiver.shared.unzip(path: gameArchPath)
                 DispatchQueue.main.async { [gameSession] in
                     let url = GameServer.shared.start(
+                        provider: provider,
                         directoryPath: gamePath,
                         indexFilename: "/",
                         session: gameSession
