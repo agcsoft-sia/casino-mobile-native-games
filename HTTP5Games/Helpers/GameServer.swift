@@ -23,10 +23,24 @@ class GameServer {
                 cacheAge: 0,
                 allowRangeRequests: true
             )
-
             server.start(withPort: 8081, bonjourName: nil)
             self.server = server
-            let url: URL! = URL(string: "http://127.0.0.1:8081?startup=\(session)")
+            
+            // Pragmatic
+            let launcherURL: URL! = server.serverURL?.appendingPathComponent("launcher.html")
+            var components = URLComponents(url: launcherURL, resolvingAgainstBaseURL: true)
+            var queryItems = components?.percentEncodedQueryItems ?? []
+            queryItems.append(.init(name: "url", value: session))
+            components?.percentEncodedQueryItems = queryItems
+            
+            // Habanero
+//            let launcherURL: URL! = server.serverURL?.appendingPathComponent("index.html")
+//            var components = URLComponents(url: launcherURL, resolvingAgainstBaseURL: true)
+//            var queryItems = components?.percentEncodedQueryItems ?? []
+//            queryItems.append(.init(name: "startup", value: session))
+//            components?.percentEncodedQueryItems = queryItems
+            
+            let url = components!.url!
             return url
         }
     

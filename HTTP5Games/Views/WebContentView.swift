@@ -23,9 +23,9 @@ struct WebContentViewModel: WebContentViewModelProtocol {
             return
         }
 
-        var queryItems = urlComps.queryItems ?? []
+        var queryItems = urlComps.percentEncodedQueryItems ?? []
         queryItems.append(URLQueryItem(name: "webView", value: "true"))
-        urlComps.queryItems = queryItems
+        urlComps.percentEncodedQueryItems = queryItems
         self.url = urlComps.url
     }
 }

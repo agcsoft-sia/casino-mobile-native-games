@@ -20,7 +20,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack(spacing: 16) {
-            Text("Habanero games work for Germany country")
+            Text("Games works for Germany/Norway country")
             TextField("Token", text: $token)
             Button("SGRainbowmania") {
                 openGame(
@@ -40,6 +40,11 @@ struct ContentView: View {
             Button("BigBassBonanza") {
                 openGame(
                     identifier: "pragmaticexternal:BigBassBonanza"
+                )
+            }
+            Button("Undefined") {
+                openGame(
+                    identifier: "undefined:undefined"
                 )
             }
             if progress > 0 {
@@ -82,7 +87,7 @@ struct ContentView: View {
                 DispatchQueue.main.async { [gameSession] in
                     let url = GameServer.shared.start(
                         directoryPath: gamePath,
-                        indexFilename: "index.html",
+                        indexFilename: "/",
                         session: gameSession
                     )
                     debugPrint(url)
